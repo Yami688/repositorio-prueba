@@ -48,7 +48,40 @@ int main() {
         printf("4. Salir\n");
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
-    }    
-} 
 
+           switch (opcion) {
+            case 1:
+                printf("Su saldo actual es: %.2f\n", usuarios[i].saldo);
+                break;
+            case 2:
+                printf("Ingrese el monto a depositar: ");
+                scanf("%f", &monto);
+                if (monto > 0) {
+                    usuarios[i].saldo += monto;
+                    printf("Deposito exitoso. Nuevo saldo: %.2f\n", usuarios[i].saldo);
+                } else {
+                    printf("Monto invalido. El deposito debe ser mayor a cero.\n");
+                }
+                break;
+            case 3:
+                printf("Ingrese el monto a retirar: ");
+                scanf("%f", &monto);
+                if (monto > 0 && monto <= usuarios[i].saldo) {
+                    usuarios[i].saldo -= monto;
+                    printf("Retiro exitoso. Nuevo saldo: %.2f\n", usuarios[i].saldo);
+                } else {
+                    printf("Monto invalido o saldo insuficiente.\n");
+                }
+                break;
+            case 4:
+                printf("Gracias por usar el sistema de banca en linea. Hasta luego\n");
+                break;
+            default:
+                printf("Opcion invalida. Por favor, seleccione una opcion del menu.\n");
+        }
+    } while (opcion != 4); 
 
+    return 0;
+    
+
+}
