@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// Estructura para guardar los datos de cada usuario
 struct usuario {
     char nombre[20];
     char contrasena[20];
@@ -20,6 +21,7 @@ int main() {
     int opcion;
     float monto;
 
+//inicio de sesion
     printf("=== Bienvenido al sistema de banca en linea ===\n");
     printf("Ingrese su nombre de usuario: ");
     scanf("%s", user);
@@ -39,6 +41,7 @@ int main() {
 
     printf("Acceso concedido. Bienvenido, %s!\n", usuarios[i].nombre);
 
+     // Menu principal
     do{
 
         printf("\n=== Menu de opciones ===\n");
