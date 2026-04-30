@@ -8,6 +8,7 @@ struct usuario {
 };
 
 int main() {
+
     struct usuario usuarios [3] = {
         {"yamilet", "1234", 1000.0},
         {"gaia", "4321", 2000.0},
@@ -30,3 +31,24 @@ int main() {
             acceso = 1;
             break;
         }
+    }
+    if(acceso == 0) {
+        printf("Acceso denegado. Usuario o contrasena incorrectos.\n");
+        return 0;
+    }
+
+    printf("Acceso concedido. Bienvenido, %s!\n", usuarios[i].nombre);
+
+    do{
+
+        printf("\n=== Menu de opciones ===\n");
+        printf("1. Consultar saldo\n");
+        printf("2. Depositar dinero\n");
+        printf("3. Retirar dinero\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);
+    }    
+} 
+
+
